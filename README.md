@@ -1,7 +1,7 @@
 # colorUI-for-uniApp
 
 <p style="text-align:center;width:100%;">
-<img src="https:www.playsort.cn/file/colorui.png"/>
+<img src="https://www.playsort.cn/file/colorui.png" />
 </p>
 
 E .Support uniapp and open source projects, individuals use free time to transplant colorUI to uniapp, the original author is `Mr. Wen Xiaogang`, thank you for his contribution to the open source project！  
