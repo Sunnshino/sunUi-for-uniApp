@@ -1,17 +1,10 @@
 <template>
 	<view class="page">
-		<view class="DrawerPage" :class="[modalName=='viewModal'?'show':'']">
-			<view class="cu-custom" :style="'height:'+CustomBar+'px'">
-				
-			</view>
-			<view class='padding margin text-center' v-for="(item,index) in 10" v-if="index == TabCur" :key='index'>
-				<view class='text-bold text-xxl margin-xl'>Tab{{index}}</view>
-				<view class='text-xl margin-xl' @tap="showModal" :data-target="'viewModal'">点击打开全息抽屉</view>
-				<navigator class='cu-btn bg-green lg block shadow radius margin-xl' open-type="reLaunch" url="../extends/extends"
-				 hover-class="none">
-					<text class='icon-back'> </text> 返回上一页
-				</navigator>
-			</view>
+		<view class="DrawerPage" :class="modalName=='viewModal'?'show':''">
+			<view class='text-xl margin-xl' @tap="showModal" :data-target="'viewModal'">打开抽屉</view>
+			<navigator class='cu-btn bg-green lg block shadow radius margin-xl' open-type="reLaunch" url="../extends/extends" hover-class="none">
+				<text class='icon-back'> </text> 返回上一页
+			</navigator>
 		</view>
 		<view class="DrawerClose" @tap='hideModal' :class="modalName=='viewModal'?'show':''">
 			<text class='icon-pullright'></text>
@@ -28,10 +21,10 @@
 			</view>
 			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
 				<view class="cu-item arrow">
-					<view class='content' @tap='CopyLink' :data-link='"https://github.com/weilanwl/ColorUI"'>
-						<text class='icon-github text-grey'></text>
-						<text class='text-grey'>GitHub</text>
-					</view>
+					<navigator class='content' url='../about/about' hover-class='none'>
+						<image src='/images/logo.png' class='png' mode='aspectFit'></image>
+						<text class='text-grey'>关于uniApp组件库</text>
+					</navigator>
 				</view>
 				<view class="cu-item arrow">
 					<navigator class='content' url='../about/about' hover-class='none'>
@@ -77,9 +70,7 @@
 				TabCur: 1,
 				scrollLeft: 0,
 				userInfo: {},
-				modalName: '',
-				CustomBar: 50,
-				StatusBar: 100
+				modalName: 'viewModal'
 			};
 		},
 		methods: {

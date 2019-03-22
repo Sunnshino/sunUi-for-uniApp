@@ -1,12 +1,5 @@
 <template>
 	<view>
-		<!-- <view class="cu-custom" style="height:{{CustomBar}}px;">
-			<view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
-				<view class='content' style='top:{{StatusBar}}px;'>
-					<image src="/images/cjkz.png" mode='widthFix'></image>
-				</view>
-			</view>
-		</view> -->
 		<view class="cu-card" v-for="(item,index) in list" :key="index">
 			<view class="cu-item bg-img shadow-blur" :style="'background-image:url('+item.img+')'" @click="toChild" :data-url="item.url">
 				<view class="cardTitle">

@@ -18,12 +18,12 @@
 		</view>
 
 
-		<view class="padding-sm">
+		<!-- <view class="padding-sm">
 			<view class='flex flex-wrap justify-around'>
-				<button class='cu-btn animation-reverse margin-sm basis-sm shadow' :class="['animation-'+animation==item.name?item.name+'s' :'','bg-'+item.color]"
+				<button class='cu-btn animation-reverse margin-sm basis-sm shadow' :class="[{}]"
 				 @tap='toggle' :data-class='item.name+"s"' v-for="(item,index) in list" :key='index'>{{item.name}}</button>
 			</view>
-		</view>
+		</view> -->
 		<view class="cu-bar bg-white">
 			<view class='action'>
 				<text class='icon-title text-orange'></text> 延迟执行

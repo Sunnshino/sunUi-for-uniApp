@@ -49,7 +49,7 @@
 			</view>
 		</view>
 		<view class="cu-card dynamic" :class="isCard?'no-card':''">
-			<view class="cu-item shadow" v-for="(item,index) in 1" :key='index'>
+			<view class="cu-item shadow" v-for="(item,idb) in 1" :key='idb'>
 				<view class="cu-list menu menu-avatar">
 					<view class="cu-item">
 						<view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
@@ -66,7 +66,7 @@
 				</view>
 				<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
 					<view class="bg-img" :class="isCard?'':'only-img'" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
-					 v-for="(item,index) in isCard?9:1" :key='index'>
+					 v-for="(item,ida) in isCard?9:1" :key='ida'>
 					</view>
 				</view>
 				<view class='text-gray text-sm text-right padding'>
@@ -83,7 +83,7 @@
 								我家铲屎官不舔毛，还抠脚！
 							</view>
 							<view class='bg-grey padding-sm radius margin-top-sm  text-sm' v-if="index==1">
-								<view class="flex" :class="index!=0?'margin-top-sm':''" v-for="(item,index) in 2" :key='index'>
+								<view class="flex" :class="idx!=0?'margin-top-sm':''" v-for="(item,idx) in 2" :key='idx'>
 									<view>我：</view>
 									<view class='flex-sub'>我家的铲屎官也不舔毛！</view>
 								</view>
@@ -110,7 +110,7 @@
 			</view>
 		</view>
 		<view class="cu-card article" :class="isCard?'no-card':''">
-			<view class="cu-item shadow" v-for="(item,index) in 1" :key='index'>
+			<view class="cu-item shadow" v-for="(item,idxs) in 1" :key='idxs'>
 				<view class="title">这里有个戏精铲屎官，主子了解一下？</view>
 				<view class="content">
 					<image src="https://image.weilanwl.com/img/4x3-3.jpg" mode="aspectFill"></image>

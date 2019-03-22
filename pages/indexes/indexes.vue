@@ -1,12 +1,6 @@
 <template>
-	<view>
-		<!-- <view class="cu-custom" style="height:{{CustomBar}}px;">
-			<view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;background-image:url(https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg);">
-				<navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
-					<text class='icon-back'></text> 索引
-				</navigator>
-			</view>
-		</view> -->
+	<view></view>
+	<!-- <view>
 		<view class="cu-bar bg-white search fixed">
 			<view class='search-form round'>
 				<text class="icon-search"></text>
@@ -21,10 +15,10 @@
 			<block v-for="(item,index) in list" :key='index'>
 				<view class='padding' :class="'indexItem-'+list[index]" :id="'indexes-'+list[index]" :data-index="list[index]">{{list[index]}}</view>
 				<view class="cu-list menu menu-avatar no-padding">
-					<view class="cu-item" v-for="(item,index) in 2" :key="index">
+					<view class="cu-item" v-for="(item,idx) in 2" :key="index">
 						<view class="cu-avatar round lg">{{list[index]}}</view>
 						<view class='content'>
-							<view class='text-grey'>{{list[index]}}<text class='text-abc'>{{list[item]}}</text>君</view>
+							<view class='text-grey'>{{list[idx]}}<text class='text-abc'>{{list[item]}}</text>君</view>
 							<view class='text-gray text-sm'>
 								有{{item,+2}}个主子需要伺候
 							</view>
@@ -38,11 +32,10 @@
 				<view class="indexBar-item " v-for="(item,index) in list" :key="index" :id='index' touchstart="getCur" touchend="setCur">{{list[index]}}</view>
 			</view>
 		</view>
-		<!--选择显示-->
 		<view :hidden="hidden" class="indexToast">
 			{{listCur}}
 		</view>
-	</view>
+	</view> -->
 </template>
 
 <script>

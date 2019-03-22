@@ -108,7 +108,7 @@
 			</view>
 			<view class="bg-white padding">
 				<view class="grid margin-bottom text-center" :class="'col-'+index+1" v-for="(item,index) in 5" :key='index'>
-					<view class="padding" :class="index%2==0?'bg-cyan':'bg-blue'" v-for="(item,index) in (index+1)*2" :key='index'>{{index+1}}</view>
+					<view class="padding" :class="index%2==0?'bg-cyan':'bg-blue'" v-for="(item,idx) in (idx+1)*2" :key='idx'>{{idx+1}}</view>
 				</view>
 			</view>
 			<view class="cu-bar bg-white margin-top solid-bottom">
