@@ -1,2 +1,4 @@
 # colorUI-for-uniApp
-Support uniapp and open source projects, individuals use free time to transplant colorUI to uniapp, the original author is Mr. Wen Xiaogang, thank you for his contribution to the open source project!
+E .Support uniapp and open source projects, individuals use free time to transplant colorUI to uniapp, the original author is Mr. Wen Xiaogang, thank you for his contribution to the open source project！  
+
+C. 支持uniapp和开源项目，个人利用空闲时间移植colorUI到uniapp，原作者是文晓港先生，在此感谢他为开源项目所作出的贡献！  
