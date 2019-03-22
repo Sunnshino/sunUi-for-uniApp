@@ -1,0 +1,160 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/home/home",
+            "style" : {}
+        },
+        {
+            "path" : "pages/component/component",
+            "style" : {}
+        },
+        {
+            "path" : "pages/extends/extends",
+            "style" : {}
+        },
+        {
+            "path" : "pages/about/about",
+            "style" : {}
+        },
+        {
+            "path" : "pages/layout/layout",
+            "style" : {}
+        },
+        {
+            "path" : "pages/background/background",
+            "style" : {}
+        },
+        {
+            "path" : "pages/text/text",
+            "style" : {}
+        },
+        {
+            "path" : "pages/icon/icon",
+            "style" : {}
+        },
+        {
+            "path" : "pages/button/button",
+            "style" : {}
+        },
+        {
+            "path" : "pages/tag/tag",
+            "style" : {}
+        },
+        {
+            "path" : "pages/avatar/avatar",
+            "style" : {}
+        },
+        {
+            "path" : "pages/progress/progress",
+            "style" : {}
+        },
+        {
+            "path" : "pages/shadow/shadow",
+            "style" : {}
+        },
+        {
+            "path" : "pages/loading/loading",
+            "style" : {}
+        },
+        {
+            "path" : "pages/plugin-extends/plugin-extends",
+            "style" : {}
+        },
+        {
+            "path" : "pages/indexes/indexes",
+            "style" : {}
+        },
+        {
+            "path" : "pages/animation/animation",
+            "style" : {}
+        },
+        {
+            "path" : "pages/verticalnav/verticalnav",
+            "style" : {}
+        },
+        {
+            "path" : "pages/drawer/drawer",
+            "style" : {}
+        },
+        {
+            "path" : "pages/bar/bar",
+            "style" : {}
+        },
+        {
+            "path" : "pages/nav/nav",
+            "style" : {}
+        },
+        {
+            "path" : "pages/list/list",
+            "style" : {}
+        },
+        {
+            "path" : "pages/card/card",
+            "style" : {}
+        },
+        {
+            "path" : "pages/form/form",
+            "style" : {}
+        },
+        {
+            "path" : "pages/timeline/timeline",
+            "style" : {}
+        },
+        {
+            "path" : "pages/chat/chat",
+            "style" : {}
+        },
+        {
+            "path" : "pages/swiper/swiper",
+            "style" : {}
+        },
+        {
+            "path" : "pages/modal/modal",
+            "style" : {}
+        },
+        {
+            "path" : "pages/steps/steps",
+            "style" : {}
+        }
+    ],
+    "tabBar" : {
+        "custom" : true,
+        "color" : "#aaa",
+        "selectedColor" : "#39b54a",
+        "borderStyle" : "black",
+        "backgroundColor" : "#ffffff",
+        "list" : [
+            {
+                "pagePath" : "pages/home/home",
+                "text" : "基础",
+                "iconPath" : "static/images/tabbar/basics.png",
+                "selectedIconPath" : "static/images/tabbar/basics_cur.png"
+            },
+            {
+                "pagePath" : "pages/component/component",
+                "text" : "组件",
+                "iconPath" : "static/images/tabbar/component.png",
+                "selectedIconPath" : "static/images/tabbar/component_cur.png"
+            },
+            {
+                "pagePath" : "pages/extends/extends",
+                "text" : "扩展",
+                "iconPath" : "static/images/tabbar/plugin.png",
+                "selectedIconPath" : "static/images/tabbar/plugin_cur.png"
+            },
+            {
+                "pagePath" : "pages/about/about",
+                "text" : "关于",
+                "iconPath" : "static/images/tabbar/about.png",
+                "selectedIconPath" : "static/images/tabbar/about_cur.png"
+            }
+        ]
+    },
+    "globalStyle" : {
+        "navigationBarBackgroundColor" : "#39b54a",
+        "navigationBarTitleText" : "Color UI",
+        "navigationStyle" : "custom",
+        "navigationBarTextStyle" : "white"
+    }
+}
