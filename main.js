@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App'
 import coloruiStar from './components/colorui-star.vue'
 import Rq from './util/Rq.js'
-
-Vue.component('colorui-star',coloruiStar);
+import radioCheckbox from './components/radio-checkbox.vue'
+Vue.component('radio-checkbox', radioCheckbox)
+Vue.component('colorui-star', coloruiStar);
 Vue.config.productionTip = false
 Vue.prototype.$Rq = Rq.Rq;
 
