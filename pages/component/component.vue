@@ -18,6 +18,11 @@
 		data() {
 			return {
 				elements: [{
+						title: '星星评分',
+						name: 'star',
+						color: 'orange',
+						icon: 'messagefill'
+					}, {
 						title: '操作条',
 						name: 'bar',
 						color: 'purple',

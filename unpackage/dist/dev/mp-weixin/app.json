@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/component/component",
+    "pages/extends/extends",
+    "pages/about/about",
+    "pages/layout/layout",
+    "pages/background/background",
+    "pages/text/text",
+    "pages/icon/icon",
+    "pages/button/button",
+    "pages/tag/tag",
+    "pages/avatar/avatar",
+    "pages/progress/progress",
+    "pages/shadow/shadow",
+    "pages/loading/loading",
+    "pages/plugin-extends/plugin-extends",
+    "pages/indexes/indexes",
+    "pages/animation/animation",
+    "pages/verticalnav/verticalnav",
+    "pages/drawer/drawer",
+    "pages/bar/bar",
+    "pages/nav/nav",
+    "pages/list/list",
+    "pages/card/card",
+    "pages/form/form",
+    "pages/timeline/timeline",
+    "pages/chat/chat",
+    "pages/swiper/swiper",
+    "pages/modal/modal",
+    "pages/steps/steps",
+    "pages/star/star"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#39b54a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "基础",
+        "iconPath": "static/images/tabbar/basics.png",
+        "selectedIconPath": "static/images/tabbar/basics_cur.png"
+      },
+      {
+        "pagePath": "pages/component/component",
+        "text": "组件",
+        "iconPath": "static/images/tabbar/component.png",
+        "selectedIconPath": "static/images/tabbar/component_cur.png"
+      },
+      {
+        "pagePath": "pages/extends/extends",
+        "text": "扩展",
+        "iconPath": "static/images/tabbar/plugin.png",
+        "selectedIconPath": "static/images/tabbar/plugin_cur.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "static/images/tabbar/about.png",
+        "selectedIconPath": "static/images/tabbar/about_cur.png"
+      }
+    ]
+  }
+}

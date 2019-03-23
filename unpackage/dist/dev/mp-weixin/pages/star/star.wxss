@@ -1,0 +1,7 @@
+
+.m-2 {
+	margin: 2% 0;
+	padding: 2% 0;
+	border-bottom: 1rpx solid #ddd;
+}
+

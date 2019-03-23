@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
+import coloruiStar from './components/colorui-star.vue'
 
+Vue.component('colorui-star',coloruiStar);
 Vue.config.productionTip = false
 
 App.mpType = 'app'

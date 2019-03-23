@@ -116,6 +116,10 @@
         {
             "path" : "pages/steps/steps",
             "style" : {}
+        },
+        {
+            "path" : "pages/star/star",
+            "style" : {}
         }
     ],
     "tabBar" : {
