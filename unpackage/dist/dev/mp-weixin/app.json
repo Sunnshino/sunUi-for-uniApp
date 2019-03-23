@@ -29,7 +29,8 @@
     "pages/swiper/swiper",
     "pages/modal/modal",
     "pages/steps/steps",
-    "pages/star/star"
+    "pages/star/star",
+    "pages/base-request/base-request"
   ],
   "subPackages": [],
   "window": {

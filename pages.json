@@ -120,6 +120,10 @@
         {
             "path" : "pages/star/star",
             "style" : {}
+        },
+        {
+            "path" : "pages/base-request/base-request",
+            "style" : {}
         }
     ],
     "tabBar" : {

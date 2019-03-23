@@ -131,9 +131,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       list: [{
-        title: '索引列表',
+        title: 'Rqquest简易请求封装',
         img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
-        url: '../indexes/indexes' },
+        url: '../base-request/base-request' },
 
       {
         title: '微动画',
