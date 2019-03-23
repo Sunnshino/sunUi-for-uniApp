@@ -16,7 +16,7 @@ page {
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 }
 
-view,
+/* view,
 text,
 scroll-view,
 swiper,
@@ -29,7 +29,7 @@ navigator,
 image {
 	box-sizing: border-box;
 }
-
+ */
 .round {
 	border-radius: 5000upx;
 }

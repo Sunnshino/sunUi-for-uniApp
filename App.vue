@@ -35,7 +35,7 @@
 	.nav-li {
 		padding: 30upx;
 		border-radius: 12upx;
-		width: 45%;
+		width: 36%;
 		margin: 0 2.5% 40upx;
 		background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
 		background-size: cover;
