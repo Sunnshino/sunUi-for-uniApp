@@ -22,7 +22,7 @@
 						<view class='cu-item' v-for="(item,index) in 3" :key='index'>
 							<label class='flex justify-between align-center flex-sub'>
 								<view class='flex-sub'>{{index +3}} 列</view>
-								<radio class='round' :value='index +3' :checked='gridCol==index+3'></radio>
+								<!-- <radio class='round' :value='index +3' :checked='gridCol==index+3'></radio> -->
 							</label>
 						</view>
 					</view>
@@ -258,8 +258,8 @@
 			</view>
 		</view>
 		<view class="cu-list menu menu-avatar">
-			<view class="cu-item" :class="modalName=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 4" :key='index' @touchstart='ListTouchStart'
-			 @touchmove='ListTouchMove' @touchend='ListTouchEnd' :data-target="'move-box-'+index">
+			<view class="cu-item" :class="modalName=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 4" :key='index'
+			 @touchstart='ListTouchStart' @touchmove='ListTouchMove' @touchend='ListTouchEnd' :data-target="'move-box-'+index">
 				<view class="cu-avatar round lg" :style="'background-image:url(https://image.weilanwl.com/img/square-'+(index+1)+'.jpg);'"></view>
 				<view class='content'>
 					<view class='text-grey'>文晓港</view>
@@ -284,6 +284,7 @@
 	export default {
 		data() {
 			return {
+				num1:0,
 				iconList: [{
 					icon: 'cardboardfill',
 					color: 'red',
@@ -347,6 +348,11 @@
 
 			};
 		},
+		computed: {
+			ngridCol: function() {
+				return Number(this.gridCol);
+			}
+		},
 		methods: {
 			showModal(e) {
 				this.modalName = e.currentTarget.dataset.target;
@@ -356,6 +362,7 @@
 			},
 			gridchange: function(e) {
 				this.gridCol = e.detail.value;
+				console.log(this.gridCol,e.detail.value)
 			},
 			gridswitch: function(e) {
 				this.gridBorder = e.detail.value;

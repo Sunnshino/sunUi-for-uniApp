@@ -1,9 +1,0 @@
-<import src="/components/colorui-star.vue.wxml" />
-<import src="/common/slots.wxml" />
-
-<template name="874d504c-default-874d504c-0"><view class="_view 874d504c m-2">禁用-不可点击</view></template>
-
-<template name="874d504c-default-874d504c-1"><view class="_view 874d504c m-2">禁用-展示评级</view></template>
-
-<template name="874d504c-default-874d504c-2"><view class="_view 874d504c m-2">启用-可评级</view></template>
-

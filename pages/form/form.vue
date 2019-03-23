@@ -80,11 +80,11 @@
 			</view>
 			<view class="cu-form-group">
 				<view class='title'>地址选择</view>
-				<picker mode="region" @change="RegionChange" :value="region" :custom-item="customItem">
+				<!-- <picker mode="region" @change="RegionChange" :value="region" :custom-item="'customItem'">
 					<view class="picker">
 						{{region[0]}}，{{region[1]}}，{{region[2]}}
 					</view>
-				</picker>
+				</picker> -->
 			</view>
 
 			<view class="cu-form-group margin-top">
@@ -171,6 +171,8 @@
 	export default {
 		data() {
 			return {
+				
+				modalName:'',
 				index: null,
 				picker: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
 				multiArray: [

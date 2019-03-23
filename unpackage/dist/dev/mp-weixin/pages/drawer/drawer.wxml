@@ -1,2 +1,0 @@
-<import src="./drawer.vue.wxml" />
-    <template is="1c01163a" data="{{ ...$root['0'], $root }}"/>

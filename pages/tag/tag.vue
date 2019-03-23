@@ -37,17 +37,21 @@
 			<view class="padding-xs" v-for="(item,index) in ColorList" :key='index'>
 				<view class="cu-tag" :class='"bg-"+item.name'>{{item.title}}</view>
 			</view>
-			<view class="padding-xs" v-for="(item,index) in ColorList" v-if="index<12" :key='index'>
+		</view>
+		
+		<view class='padding-sm flex flex-wrap'> 
+			<view class="padding-xs" v-for="(item,idx) in ColorList" :key='idx' v-if="idx<12">
 				<view class="cu-tag light" :class='"bg-"+item.name'>{{item.title}}</view>
 			</view>
 		</view>
+		
 		<view class="cu-bar bg-white margin-top">
 			<view class='action'>
 				<text class='icon-title text-blue'></text>镂空标签
 			</view>
 		</view>
 		<view class='padding-sm flex flex-wrap'>
-			<view class="padding-xs" v-for="(item,index) in ColorList" :key='index'>
+			<view class="padding-xs" v-for="(item,idxs) in ColorList" :key='idxs'>
 				<view class="cu-tag" :class='"line-"+item.name'>{{item.title}}</view>
 			</view>
 		</view>

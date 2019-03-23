@@ -1,2 +1,0 @@
-<import src="./shadow.vue.wxml" />
-    <template is="db2f594c" data="{{ ...$root['0'], $root }}"/>
