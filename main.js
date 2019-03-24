@@ -2,12 +2,15 @@ import Vue from 'vue'
 import App from './App'
 import coloruiStar from './components/colorui-star.vue'
 import Rq from './util/Rq.js'
+import Api from './api.js'
 import radioCheckbox from './components/radio-checkbox.vue'
+import coloruiSpeaker from './components/colorui-speaker.vue'
 Vue.component('radio-checkbox', radioCheckbox)
 Vue.component('colorui-star', coloruiStar);
+Vue.component('colorui-speaker', coloruiSpeaker);
 Vue.config.productionTip = false
 Vue.prototype.$Rq = Rq.Rq;
-
+Vue.prototype.$Api = Api.api;
 App.mpType = 'app'
 
 const app = new Vue({

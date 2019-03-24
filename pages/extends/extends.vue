@@ -16,7 +16,7 @@
 		data() {
 			return {
 				list: [{
-						title: 'Rqquest简易请求封装',
+						title: 'Request简易请求封装',
 						img: 'https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg',
 						url: '../base-request/base-request'
 					},

@@ -125,6 +125,14 @@
             "path" : "pages/base-request/base-request",
             "style" : {}
         }
+        ,{
+            "path" : "pages/radio-checkbox/radio-checkbox",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/speaker/speaker",
+            "style" : {}
+        }
     ],
     "tabBar" : {
         "color" : "#aaa",

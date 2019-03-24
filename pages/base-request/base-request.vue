@@ -27,9 +27,9 @@
 			 * title:加载名称,默认加载中...
 			 * data:数据,为空可以不加
 			 */
-
+			
 			const $rq_info = await this.$Rq({
-				url: 'https://a11.admin168.net/index.php?m=Api&c=Api&a=indexList'
+				url: this.$Api.indexList
 			})
 
 			const $rq_info1 = await this.$Rq({
@@ -41,6 +41,8 @@
 				data:{},
 				url: 'https://a11.admin168.net/index.php?m=Api&c=Api&a=indexList'
 			})
+			
+			console.log('所有数据接口:',this.$Api)
 
 			console.log('数据1:',$rq_info,'数据2:',$rq_info,'数据3:',$rq_info)
 			

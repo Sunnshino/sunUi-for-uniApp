@@ -18,7 +18,17 @@
 		data() {
 			return {
 				elements: [{
-						title: '星星评分',
+						title: '滚动公告',
+						name: 'speaker',
+						color: 'orange',
+						icon: 'messagefill'
+					}, {
+						title: '可选标签',
+						name: 'radio-checkbox',
+						color: 'grey',
+						icon: 'squarecheckfill'
+					}, {
+						title: '星级评分',
 						name: 'star',
 						color: 'orange',
 						icon: 'messagefill'

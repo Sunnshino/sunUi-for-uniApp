@@ -2,7 +2,8 @@
 	<view>
 		<image src='../../static/images/BasicsBg.png' mode='widthFix' class='png' style='width:100%;height:486rpx'></image>
 		<view class='nav-list'>
-			<navigator open-type="navigate" hover-class='none' :url="'../'+item.name+'/'+item.name" v-for="(item,index) in elements" :key="index" class="nav-li" :class='"bg-"+item.color'>
+			<navigator open-type="navigate" hover-class='none' :url="'../'+item.name+'/'+item.name" v-for="(item,index) in elements"
+			 :key="index" class="nav-li" :class='"bg-"+item.color'>
 				<view class="nav-title">{{item.title}}</view>
 				<view class="nav-name">{{item.name}}</view>
 				<text :class='"icon-"+item.icon'></text>
@@ -75,7 +76,7 @@
 						name: 'loading',
 						color: 'green',
 						icon: 'loading2'
-					},
+					}
 				]
 			};
 		}
