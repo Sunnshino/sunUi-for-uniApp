@@ -133,6 +133,10 @@
             "path" : "pages/speaker/speaker",
             "style" : {}
         }
+        ,{
+            "path" : "pages/up-img/up-img",
+            "style" : {}
+        }
     ],
     "tabBar" : {
         "color" : "#aaa",
@@ -169,7 +173,9 @@
     "globalStyle" : {
         "navigationBarBackgroundColor" : "#39b54a",
         "navigationBarTitleText" : "Color UI",
-        "navigationStyle" : "default",
+        // #ifndef MP-WEIXIN
+		"navigationStyle" : "custom",
+		// #endif
         "navigationBarTextStyle" : "white"
     }
 }
