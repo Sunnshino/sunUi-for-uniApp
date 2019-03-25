@@ -1,0 +1,56 @@
+/* global css */
+page {
+	/* font-weight: 100; */
+}
+
+/* 
+ 私缀样式(sun) 
+ */
+.sun-title {
+	color: #666;
+	font-size: .8em;
+	padding: 3%;
+	border-bottom: 1upx solid #ddd;
+}
+
+.nav-hover {
+	opacity: .8;
+}
+
+/* 
+	背景颜色(BG)
+ */
+.bg-red {
+	background-color: #DD5145;
+}
+
+.bg-green {
+	background-color: #17A05D;
+}
+
+.bg-yellow {
+	background-color: #FFCD42;
+}
+
+.bg-blue {
+	background-color: #4B8BF4;
+}
+
+.bg-orange {
+	background-color: #FFC019;
+}
+
+/* 
+	文字(T)
+*/
+.t-left {
+	text-align: left;
+}
+
+.t-right {
+	text-align: right;
+}
+
+.t-center {
+	text-align: center;
+}
