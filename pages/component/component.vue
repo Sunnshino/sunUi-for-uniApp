@@ -18,6 +18,11 @@
 		data() {
 			return {
 				elements: [{
+						title: '上传图片',
+						name: 'up-img',
+						color: 'olive',
+						icon: 'album'
+					}, {
 						title: '滚动公告',
 						name: 'speaker',
 						color: 'orange',

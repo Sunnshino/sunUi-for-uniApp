@@ -1,0 +1,19 @@
+{
+  "name": "colorui-for-uniapp",
+  "version": "1.0.3",
+  "description": "colorui for uniapp",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunnshino/colorUI-for-uniApp.git"
+  },
+  "author": "Sunsin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sunnshino/colorUI-for-uniApp/issues"
+  },
+  "homepage": "https://github.com/Sunnshino/colorUI-for-uniApp#readme"
+}
