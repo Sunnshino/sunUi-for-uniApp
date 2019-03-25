@@ -6,11 +6,12 @@ import coloruiStar from './components/colorui-star.vue'
 import radioCheckbox from './components/radio-checkbox.vue'
 import coloruiSpeaker from './components/colorui-speaker.vue'
 import coloruiUpImg from './components/colorui-upimg.vue'
+import coloruiSwiper from './components/colorui-swiper.vue'
 Vue.component('colorui-upimg', coloruiUpImg)
 Vue.component('radio-checkbox', radioCheckbox)
 Vue.component('colorui-star', coloruiStar);
 Vue.component('colorui-speaker', coloruiSpeaker);
-
+Vue.component('colorui-swiper',coloruiSwiper);
 
 Vue.config.productionTip = false
 Vue.prototype.$Rq = Rq.Rq;
