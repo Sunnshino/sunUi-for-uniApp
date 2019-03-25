@@ -1,128 +1,33 @@
 {
-    "pages" : [
-        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-        {
-            "path" : "pages/home/home",
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	    ,{
+            "path" : "pages/show/show",
             "style" : {}
-        },
-        {
-            "path" : "pages/component/component",
+        }
+        ,{
+            "path" : "pages/tips/tips",
             "style" : {}
-        },
-        {
-            "path" : "pages/extends/extends",
-            "style" : {}
-        },
-        {
+        }
+        ,{
             "path" : "pages/about/about",
             "style" : {}
-        },
-        {
-            "path" : "pages/layout/layout",
-            "style" : {}
-        },
-        {
-            "path" : "pages/background/background",
-            "style" : {}
-        },
-        {
-            "path" : "pages/text/text",
-            "style" : {}
-        },
-        {
-            "path" : "pages/icon/icon",
-            "style" : {}
-        },
-        {
-            "path" : "pages/button/button",
-            "style" : {}
-        },
-        {
-            "path" : "pages/tag/tag",
-            "style" : {}
-        },
-        {
-            "path" : "pages/avatar/avatar",
-            "style" : {}
-        },
-        {
-            "path" : "pages/progress/progress",
-            "style" : {}
-        },
-        {
-            "path" : "pages/shadow/shadow",
-            "style" : {}
-        },
-        {
-            "path" : "pages/loading/loading",
-            "style" : {}
-        },
-        {
-            "path" : "pages/plugin-extends/plugin-extends",
-            "style" : {}
-        },
-        {
-            "path" : "pages/indexes/indexes",
-            "style" : {}
-        },
-        {
-            "path" : "pages/animation/animation",
-            "style" : {}
-        },
-        {
-            "path" : "pages/verticalnav/verticalnav",
-            "style" : {}
-        },
-        {
-            "path" : "pages/drawer/drawer",
-            "style" : {}
-        },
-        {
-            "path" : "pages/bar/bar",
-            "style" : {}
-        },
-        {
-            "path" : "pages/nav/nav",
-            "style" : {}
-        },
-        {
-            "path" : "pages/list/list",
-            "style" : {}
-        },
-        {
-            "path" : "pages/card/card",
-            "style" : {}
-        },
-        {
-            "path" : "pages/form/form",
-            "style" : {}
-        },
-        {
-            "path" : "pages/timeline/timeline",
-            "style" : {}
-        },
-        {
-            "path" : "pages/chat/chat",
-            "style" : {}
-        },
-        {
-            "path" : "pages/swiper/swiper",
-            "style" : {}
-        },
-        {
-            "path" : "pages/modal/modal",
-            "style" : {}
-        },
-        {
-            "path" : "pages/steps/steps",
-            "style" : {}
-        },
-        {
+        }
+        ,{
             "path" : "pages/star/star",
             "style" : {}
-        },
-        {
-            "path" : "pages/base-request/base-request",
+        }
+        ,{
+            "path" : "pages/up-img/up-img",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/swiper/swiper",
             "style" : {}
         }
         ,{
@@ -134,48 +39,49 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/up-img/up-img",
+            "path" : "pages/basic-request/basic-request",
             "style" : {}
         }
     ],
-    "tabBar" : {
-        "color" : "#aaa",
-        "selectedColor" : "#39b54a",
-        "borderStyle" : "black",
-        "backgroundColor" : "#ffffff",
-        "list" : [
-            {
-                "pagePath" : "pages/home/home",
-                "text" : "基础",
-                "iconPath" : "static/images/tabbar/basics.png",
-                "selectedIconPath" : "static/images/tabbar/basics_cur.png"
-            },
-            {
-                "pagePath" : "pages/component/component",
-                "text" : "组件",
-                "iconPath" : "static/images/tabbar/component.png",
-                "selectedIconPath" : "static/images/tabbar/component_cur.png"
-            },
-            {
-                "pagePath" : "pages/extends/extends",
-                "text" : "扩展",
-                "iconPath" : "static/images/tabbar/plugin.png",
-                "selectedIconPath" : "static/images/tabbar/plugin_cur.png"
-            },
-            {
-                "pagePath" : "pages/about/about",
-                "text" : "关于",
-                "iconPath" : "static/images/tabbar/about.png",
-                "selectedIconPath" : "static/images/tabbar/about_cur.png"
-            }
-        ]
-    },
-    "globalStyle" : {
-        "navigationBarBackgroundColor" : "#39b54a",
-        "navigationBarTitleText" : "Color UI",
-        // #ifndef MP-WEIXIN
-		"navigationStyle" : "custom",
+	"tabBar" : {
+	    "color" : "#aaa",
+	    "selectedColor" : "#39b54a",
+	    "borderStyle" : "black",
+	    "backgroundColor" : "#ffffff",
+	    "list" : [
+	        {
+	            "pagePath" : "pages/index/index",
+	            "text" : "组件",
+	            "iconPath" : "static/tabbar/component.png",
+	            "selectedIconPath" : "static/tabbar/componentHover.png"
+	        },
+	        {
+	            "pagePath" : "pages/show/show",
+	            "text" : "演示",
+	            "iconPath" : "static/tabbar/show.png",
+	            "selectedIconPath" : "static/tabbar/showHover.png"
+	        },
+	        {
+	            "pagePath" : "pages/tips/tips",
+	            "text" : "提示",
+	            "iconPath" : "static/tabbar/tips.png",
+	            "selectedIconPath" : "static/tabbar/tipsHover.png"
+	        },
+	        {
+	            "pagePath" : "pages/about/about",
+	            "text" : "关于",
+	            "iconPath" : "static/tabbar/about.png",
+	            "selectedIconPath" : "static/tabbar/aboutHover.png"
+	        }
+	    ]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		// #ifndef MP-WEIXIN
+		"navigationStyle":"custom",
 		// #endif
-        "navigationBarTextStyle" : "white"
-    }
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
 }

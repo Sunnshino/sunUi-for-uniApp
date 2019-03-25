@@ -15,32 +15,22 @@
 	
  -->
 
-
 <template>
 	<view class="content">
-		<view class="cu-bar margin-top bg-white">
-			<view class="action">
-				<text class="icon-title text-green"></text>
-				<span>单选</span>
-			</view>
+		<view class="sun-title">
+			<span>单选</span>
 		</view>
-		<radio-checkbox type="radio" :radioData="radio" name="title" width="50"  @sendRadioData="sendRadioData" />
+		<sunradio-checkbox type="radio" :radioData="radio" name="title" width="50"  @sendRadioData="sendRadioData" />
 		<view class="m-t2"></view>
-		<view class="cu-bar margin-top bg-white">
-			<view class="action">
-				<text class="icon-title text-green"></text>
-				<span>单选1</span>
-			</view>
+		<view class="sun-title">
+			<span>单选1</span>
 		</view>
-		<radio-checkbox type="radio" :radioData="radio1" name="name" width="150" @sendRadioData="sendRadioData1" />
+		<sunradio-checkbox type="radio" :radioData="radio1" name="name" width="150" @sendRadioData="sendRadioData1" />
 		<view class="m-t2"></view>
-		<view class="cu-bar margin-top bg-white">
-			<view class="action">
-				<text class="icon-title text-green"></text>
-				<span>复选</span>
-			</view>
+		<view class="sun-title">
+			<span>复选</span>
 		</view>
-		<radio-checkbox type="checkbox" :checkboxData="checkbox" name="name" @sendCheckboxData="sendCheckboxData" />
+		<sunradio-checkbox type="checkbox" :checkboxData="checkbox" name="name" @sendCheckboxData="sendCheckboxData" />
 	</view>
 </template>
 

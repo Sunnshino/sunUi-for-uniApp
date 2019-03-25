@@ -1,16 +1,20 @@
 <template>
 	<view>
-		<colorui-star @change="starInfo" :colorStar="colorStar">
-			<view class="m-2">禁用-不可点击</view>
-		</colorui-star>
+		<view class="sun-title">星级评价(禁用)</view>
+		<sunui-star @change="starInfo" :sunStar="sunStar"></sunui-star>
 
-		<colorui-star @change="starInfo" :colorStar="colorStar1">
-			<view class="m-2">禁用-展示评级</view>
-		</colorui-star>
+		<view class="sun-title">星级评价(禁用-展示评价)</view>
+		<sunui-star @change="starInfo" :sunStar="sunStar1">
+		</sunui-star>
 
-		<colorui-star @change="starInfo" :colorStar="colorStar2">
-			<view class="m-2">启用-可评级</view>
-		</colorui-star>
+		<view class="sun-title">星级评价(启用)</view>
+		<sunui-star @change="starInfo" :sunStar="sunStar2">
+		</sunui-star>
+		
+		<view class="sun-title">星级评价(启用-展示评价)</view>
+		<sunui-star @change="starInfo" :sunStar="sunStar3">
+		</sunui-star>
+
 	</view>
 </template>
 
@@ -18,21 +22,28 @@
 	export default {
 		data() {
 			return {
-				colorStar: {
+				sunStar: {
 					disabled: true,
 					rate: 1,
 					icon: 'star',
 					tips: false,
 					tipsArr: ['很差', '差', '一般', '好', '非常好']
 				},
-				colorStar1: {
+				sunStar1: {
 					disabled: true,
 					rate: 2,
 					icon: 'star',
 					tips: true,
 					tipsArr: ['很差', '差', '一般', '好', '非常好']
 				},
-				colorStar2:{
+				sunStar2: {
+					disabled: false,
+					rate: 2,
+					icon: 'star',
+					tips: false,
+					tipsArr: ['很差', '差', '一般', '好', '非常好']
+				},
+				sunStar3: {
 					disabled: false,
 					rate: 2,
 					icon: 'star',
@@ -50,9 +61,5 @@
 </script>
 
 <style>
-	.m-2 {
-		margin: 2% 0;
-		padding: 2% 0;
-		border-bottom: 1upx solid #ddd;
-	}
+
 </style>

@@ -8,14 +8,16 @@
 
 
 <template>
-	<view class="ab-center">
+	<view>
 		<!-- 横轴滚动 -->
-		<colorui-speaker :icon="icon" :msgs="speakrmsg"></colorui-speaker>
-
+		<view class="sun-title">横轴滚动</view>
+		<sunui-speaker :icon="icon" :msgs="speakrmsg"></sunui-speaker>
+		
 		<view style="margin-top:3%;"></view>
-
+		
 		<!-- 纵轴滚动 -->
-		<colorui-speaker :vertical="false" :interval="5000" :icon="icon" :msgs="speakrmsg"></colorui-speaker>
+		<view class="sun-title">纵轴滚动</view>
+		<sunui-speaker :vertical="false" :interval="5000" :icon="icon" :msgs="speakrmsg"></sunui-speaker>
 	</view>
 </template>
 
@@ -43,7 +45,7 @@
 </script>
 
 <style>
-	page{
-		background: #fff;
+	.sun-title{
+		margin-bottom: 6%;
 	}
 </style>

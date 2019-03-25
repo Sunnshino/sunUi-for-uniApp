@@ -2,9 +2,10 @@
 	<view>
 		<view>
 			<!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-			<colorui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" />
+			<view class="sun-title">上传图片</view>
+			<sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" />
 			<!-- 会覆盖限制上传图片数量（也就是count参数失效），notli默认false -->
-			<colorui-upimg :upImgConfig="upImgConfig1" @onUpImg="upImgDatas" />
+			<sunui-upimg :upImgConfig="upImgConfig1" @onUpImg="upImgDatas" />
 		</view>
 	</view>
 </template>
@@ -22,7 +23,13 @@
 					// 是否开启notli(即选择完直接上传)
 					notli: false,
 					// 图片数量
-					count: 2
+					count: 2,
+					// 新增上传背景修改
+					bgColor: '#0089FC',
+					// 新增上传icon图标颜色修改
+					iconColor: '#fff',
+					// 上传文字描述(仅限四个字)
+					text: '添加图片'
 				},
 				/**
 				 * 图片上传配置项2
@@ -51,7 +58,5 @@
 </script>
 
 <style>
-	page {
-		background-color: #fff;
-	}
+
 </style>

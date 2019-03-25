@@ -4,7 +4,6 @@
 const hostDomain = 'https://a11.admin168.net/index.php?m=Api&c=Api&a=';
 
 
-
 let api = {
 	/**
 	 * 静态资源地址
@@ -26,4 +25,5 @@ let api = {
 for (let key in api.api) {
 	api.api[key] = hostDomain + api.api[key];
 }
+
 module.exports = api;
