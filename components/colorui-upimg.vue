@@ -2,26 +2,8 @@
  
 方法upImgData可获取上传图片的所有信息,为数组(可以通过此来计算图片长度以及其它信息)
  
-/**
- *		
-		会覆盖限制上传图片数量，notli默认false
-		<colorui-upimg url="https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind" :notli="true" :count="2" :upreduce="true" @onUpImg="upData" />
-		不会覆盖限制上传图片数量 
-		<colorui-upimg url="https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind" :notli="false" :count="2" :upreduce="true" @onUpImg="upDatas" />
- *
- * url：上传图片地址
- * count:上传总数量(默认上传1张图片)
- * 
- * 2019-03-20 MIT
- *
- * 版本号:v1.1:imgs预览删除增加
- * 致谢
- * 919809734@qq.com
- * 版本号:v1.3:新增不限制上传图片,不必固定三张，以及计算图片
- * 致谢
- *langice@126.com
- *
- */ 
+ 具体使用查看组件内component->up-img
+ 
  
  -->
 

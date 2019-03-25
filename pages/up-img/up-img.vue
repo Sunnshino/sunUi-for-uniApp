@@ -1,6 +1,7 @@
 <template>
 	<view>
 		<view>
+			<!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
 			<colorui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" />
 			<!-- 会覆盖限制上传图片数量（也就是count参数失效），notli默认false -->
 			<colorui-upimg :upImgConfig="upImgConfig1" @onUpImg="upImgDatas" />
@@ -12,6 +13,9 @@
 	export default {
 		data() {
 			return {
+				/**
+				 * 图片上传配置项1
+				 */
 				upImgConfig: {
 					// 后端图片接口地址
 					url: 'https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind',
@@ -20,6 +24,9 @@
 					// 图片数量
 					count: 2
 				},
+				/**
+				 * 图片上传配置项2
+				 */
 				upImgConfig1: {
 					// 后端图片接口地址
 					url: 'https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind',
