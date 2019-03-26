@@ -15,15 +15,21 @@
 		data() {
 			return {
 				/**
-				 * 图片上传配置项1
+				 * 图片上传配置项
+				 * 
+				 * 关于阿里云oos,开启oos的话(需要配置../ali-oos/config.js的配置项)
 				 */
 				upImgConfig: {
+					// 是否阿里云oos(为true的话url将失效)且oos地址必须是https
+					oos: false,
+					// 阿里云oos上传目录(必须存在)
+					oosDirectory:'mifanimg',
 					// 后端图片接口地址
 					url: 'https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind',
 					// 是否开启notli(即选择完直接上传)
 					notli: false,
 					// 图片数量
-					count: 2,
+					count: 1,
 					// 新增上传背景修改
 					bgColor: '#0089FC',
 					// 新增上传icon图标颜色修改

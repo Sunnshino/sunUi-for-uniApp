@@ -71,7 +71,7 @@
 		flex-wrap: wrap;
 		border-radius: 10upx;
 		border-bottom: 1upx solid #ddd;
-		background-image: url('../../static/imgs/bg.jpg');
+		background-image: url('https://www.playsort.cn/static/imgs/bg.jpg');
 		background-size: cover;
 		box-shadow:1upx 2upx 8upx #000;
 	}

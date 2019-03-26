@@ -1,7 +1,7 @@
 >**sunUi for uniApp**  
 >**如无法按照预期运行,请star并且watch本项目,以便得到最新的UI('_')**   
 
-# sunUi-for-uniApp
+# sunUi-for-uniApp(一款简单、便捷、组件化的一套UI)
 
 <p style="text-align:center;width:100%;">
 	

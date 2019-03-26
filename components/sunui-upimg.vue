@@ -1,16 +1,13 @@
 <!-- 
  
 方法upImgData可获取上传图片的所有信息,为数组(可以通过此来计算图片长度以及其它信息)
- 
- 具体使用查看组件内component->up-img
- 
- 
+
+具体使用查看组件内component->up-img
  -->
 
 <template name='sun-upimg'>
 	<view>
 		<view class="sunsin_picture_list">
-
 			<view v-for="(item,index) in upload_picture_list" :key="index" class="sunsin_picture_item">
 				<image v-show="item.upload_percent < 100" :src="item.path" mode="aspectFill"></image>
 				<image v-show="item.upload_percent == 100" :src="item.path_server" mode="aspectFill"></image>
@@ -20,7 +17,7 @@
 			<view class='sunsin_picture_item' v-show="upload_picture_list.length<upImgConfig.count || upImgConfig.notli">
 				<view class="sunsin-add-image" @click='chooseImage(upImgConfig.count)' :style="'background-color:'+upImgConfig.bgColor+''">
 					<text class="icon-cameraadd" :style="'color:'+upImgConfig.iconColor+''"></text>
-					<view style="font-size: 1upx;margin-top: -25%;" :style="'color:'+upImgConfig.iconColor+''">{{upImgConfig.text}}</view>
+					<view class="icon-text" :style="'color:'+upImgConfig.iconColor+''">{{upImgConfig.text}}</view>
 				</view>
 			</view>
 		</view>
@@ -28,6 +25,12 @@
 </template>
 
 <script>
+	const env = require('./ali-oos/config.js'); //配置文件，在这文件里配置你的OSS keyId和KeySecret,timeout:87600;
+	const base64 = require('./ali-oos/base64.js'); //Base64,hmac,sha1,crypto相关算法
+	require('./ali-oos/hmac.js');
+	require('./ali-oos/sha1.js');
+	const Crypto = require('./ali-oos/crypto.js');
+
 	export default {
 		data() {
 			return {
@@ -41,6 +44,10 @@
 				type: Object,
 				default: function() {
 					return {
+						// 是否阿里云oos图片上传
+						oos: false,
+						// 阿里云oos目录(必须存在)
+						oosDirectory: 'mifanimg/2019/3/26',
 						// 后端图片接口地址
 						url: 'https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind',
 						// 是否开启notli(即选择完直接上传)
@@ -72,29 +79,70 @@
 				dImage(e, this);
 			},
 			previewImg(e) {
-				console.log(e)
 				pImage(e, this);
 			}
 		}
 
 	}
 
+	const getPolicyBase64 = () => {
+		let date = new Date();
+		date.setHours(date.getHours() + env.timeout);
+		let srcT = date.toISOString();
+		const policyText = {
+			"expiration": srcT, //设置该Policy的失效时间，超过这个失效时间之后，就没有办法通过这个policy上传文件了 
+			"conditions": [
+				["content-length-range", 0, 5 * 1024 * 1024] // 设置上传文件的大小限制,5mb
+			]
+		};
+
+		const policyBase64 = base64.encode(JSON.stringify(policyText));
+		return policyBase64;
+	}
+
+	const getSignature = (policyBase64) => {
+		const accesskey = env.AccessKeySecret;
+		const bytes = Crypto.HMAC(Crypto.SHA1, policyBase64, accesskey, {
+			asBytes: true
+		});
+		const signature = Crypto.util.bytesToBase64(bytes);
+		return signature;
+	}
+
 	// 上传文件
 	const upload_file_server = (url, that, upload_picture_list, j) => {
+
+		const aliyunFileKey = `${that.upImgConfig.oosDirectory}/` + new Date().getTime() + Math.floor(Math.random() * 150) +
+			'.png';
+		const aliyunServerURL = env.uploadImageUrl;
+		const accessid = env.OSSAccessKeyId;
+		const policyBase64 = getPolicyBase64();
+		const signature = getSignature(policyBase64);
+		
+		that.upImgConfig.oos ? url = env.uploadImageUrl : url;
+
 		const upload_task = uni.uploadFile({
 			url,
 			filePath: upload_picture_list[j]['path'],
 			name: 'file',
 			formData: {
-				'num': j
+				'key': aliyunFileKey,
+				'policy': policyBase64,
+				'OSSAccessKeyId': accessid,
+				'signature': signature,
+				'success_action_status': '200',
 			},
 			success(res) {
-				let data = JSON.parse(res.data)
-				let filename = data.info
-				let uparr = [];
-				upload_picture_list[j]['path_server'] = filename
-				that.upload_picture_list = upload_picture_list
-				that.$emit('onUpImg', that.upload_picture_list)
+				if (res.statusCode == 200) {
+					let data = !that.upImgConfig.oos ? JSON.parse(res.data) : '';
+					let filename = !that.upImgConfig.oos ? data.info : aliyunServerURL + aliyunFileKey;
+					upload_picture_list[j]['path_server'] = filename;
+					that.upload_picture_list = upload_picture_list
+					that.$emit('onUpImg', that.upload_picture_list)
+				}
+			},
+			fail(err) {
+				console.log(err)
 			}
 		})
 		upload_task.onProgressUpdate((res) => {
@@ -185,6 +233,11 @@
 		/* iOS 4.1- */
 	}
 
+	.icon-text {
+		font-size: 25upx;
+		margin-top: -25%;
+	}
+
 	.icon-cameraadd {
 		font-size: 60upx;
 	}
@@ -215,7 +268,6 @@
 		height: 150upx;
 		color: #ddd;
 		font-size: 144upx;
-		/* line-height: 59%; */
 		text-align: center;
 		margin: 2% 0 0 2%;
 		background-color: #eee;
