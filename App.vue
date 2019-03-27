@@ -16,4 +16,7 @@
 	/*每个页面公共css */
 	@import url("sun.css");
 	@import url("animate.min.css");
+	page{
+		overflow-x: hidden;
+	}
 </style>

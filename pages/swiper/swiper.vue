@@ -108,6 +108,8 @@
 
 <style>
 	page {
-		background-color: #fff;
+		/* background-color: #fff; */
+		background: none;
+		padding: 0;
 	}
 </style>

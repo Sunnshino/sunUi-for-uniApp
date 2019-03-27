@@ -112,6 +112,11 @@
 </script>
 
 <style>
+	page{
+		padding: 0;
+		background: none;
+	}
+	
 	.content {
 		background-color: #fff;
 	}

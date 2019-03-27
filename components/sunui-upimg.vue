@@ -263,7 +263,7 @@
 	}
 
 	.icon-text {
-		font-size: 25upx;
+		font-size: 28upx;
 		margin-top: -25%;
 	}
 
@@ -293,8 +293,8 @@
 	}
 
 	.sunsin-add-image {
-		width: 150upx;
-		height: 150upx;
+		width: 160upx;
+		height: 160upx;
 		color: #ddd;
 		font-size: 144upx;
 		text-align: center;
@@ -336,7 +336,7 @@
 		color: #fff;
 		width: 162upx;
 		height: 160upx;
-		margin-left: 2%;
+		margin-left: 3%;
 		text-align: center;
 		line-height: 160upx;
 		position: absolute;

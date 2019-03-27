@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<navigator open-type="navigate" hover-class='nav-hover' style="animated infinite bounce delay-2s" :url="'../'+item.name+'/'+item.name"
-		 v-for="(item,index) in elements" :key="index" class="nav-li" :class='"bg-"+item.color'>
+		<navigator open-type="navigate" hover-class='nav-hover' style="animated infinite bounce delay-2s" :url="''+item.name+'/'+item.name" v-for="(item,index) in elements"
+		 :key="index" class="nav-li" :class='"bg-"+item.color'>
 			<view class="nav-title">{{item.title}}</view>
 			<view class="nav-name">{{item.name}}</view>
 			<text :class='"icon-"+item.icon'></text>
@@ -20,10 +20,12 @@
 		data() {
 			return {
 				title: 'Hello',
-				elements: [{
-					title: 'Request请求',
-					name: 'basic-request'
-				}]
+				elements: [
+					{
+						title:'分割线',
+						name:'line'
+					}
+				]
 			}
 		},
 		onLoad() {

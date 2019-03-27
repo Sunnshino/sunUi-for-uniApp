@@ -45,6 +45,9 @@
 </script>
 
 <style>
+	page{
+		background: none;
+	}
 	.sun-title{
 		margin-bottom: 6%;
 	}

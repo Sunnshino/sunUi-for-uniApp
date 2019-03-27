@@ -41,19 +41,13 @@
 	}
 </script>
 <style scoped>
-	/* sunui-star /deep/.icon-star-hover {
-		color: #f00;
-	} */
 	.sunui-small{
 		color: #666;
 		font-size: .7em;
 	}
 	
 	.sunui-star {
-		margin-top: 5%;
+		margin: 5% 0;
 	}
 
-	.example {
-		padding: 10%;
-	}
 </style>

@@ -22,7 +22,7 @@
 ## 开发小提示
 - Chrome CORS(跨域)或CORB ,打开快捷图标Chrome,然后属性->目标(T)最后加上`--disable-web-security --user-data-dir --allow-running-insecure-content`  
 - console.log(),我们可以在App.vue onLaunch生命周期加上 `console.log=()=>{}` ,指向空(全局就不会打印了，你也可以局部页面添加=>仅局部失效)
-
+- 如果想隐藏scroll-view,我们只需要在App.vue添加
 ---------------------
 
 ## 基础元素(待UI出图,开发)

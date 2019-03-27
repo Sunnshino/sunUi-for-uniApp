@@ -32,9 +32,16 @@
 		}, {
 			"path": "pages/basic-request/basic-request",
 			"style": {}
+		},
+		{
+			"path": "pages/basic-module/basic-module",
+			"style":{}
 		}
-
-	],
+        ,{
+            "path" : "pages/basic-module/line/line",
+            "style" : {}
+        }
+    ],
 	"tabBar": {
 		"color": "#aaa",
 		"selectedColor": "#39b54a",
@@ -48,13 +55,13 @@
 			},
 			{
 				"pagePath": "pages/show/show",
-				"text": "演示",
+				"text": "基础",
 				"iconPath": "static/tabbar/show.png",
 				"selectedIconPath": "static/tabbar/showHover.png"
 			},
 			{
 				"pagePath": "pages/tips/tips",
-				"text": "提示",
+				"text": "扩展",
 				"iconPath": "static/tabbar/tips.png",
 				"selectedIconPath": "static/tabbar/tipsHover.png"
 			},
