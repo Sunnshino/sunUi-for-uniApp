@@ -1,149 +1,119 @@
-
-<!-- 
-	如需更改星级颜色,请修改css：110和117行,默认#FFBF19
- -->
-
-<template name='sun-star'>
-	<view>
-		<view class="sun-star">
-			<view class="sunui-rate">
-				<view v-for="(item,index) in starArr" :key='index' @tap="handleTap" :data-index="index" :class="item"></view>
-				<view v-show="sunStar.tips">
-					<view class="m-t2">{{sunStar.rate==1?sunStar.tipsArr[0]:sunStar.rate==2?sunStar.tipsArr[1]:sunStar.rate==3?sunStar.tipsArr[2]:sunStar.rate==4?sunStar.tipsArr[3]:sunStar.tipsArr[4]}}</view>
+<template name="sunui-star">
+	<view class="sunui-stars">
+		<view class="sunui-m">
+			<view class="sunui-stars-items" v-for="(item, index) in maxStar" :key="index" @tap="changeStar" :data-value="index">
+				<view>
+					<text class="iconfont icon-star" :class="[curStarNum > index ?'icon-star-hover':'icon-star-nhover']" :style="'font-size:'+starSize+';'"></text>
 				</view>
-				<slot></slot>
 			</view>
 		</view>
+		<slot></slot>
 	</view>
 </template>
-
 <script>
 	export default {
-		data() {
-			return {
-				starArr: [],
-			};
-		},
-		name: 'sun-star',
+		name: "sunui-star",
 		props: {
-			sunStar: {
+			starConfig: {
 				type: Object,
 				default: function() {
-					/**
-					 *  默认配置
-					 * 
-					 * icon: 'star' => 默认,不可更改 (String)
-					 * disabled：=> 不禁用评级 (Boolean)
-					 * rate：=> 星级 (Number)
-					 * tips: => 是否显示评级信息 (Boolean)
-					 * tipsArr：=> 评级信息内容(Array)
-					 */
 					return {
-						icon: 'star',
-						disabled: false,
-						rate: 1,
-						tips: false,
-						tipsArr: ['很差', '差', '一般', '好', '非常好']
+						maxStar: 5,
+						defaultStar: 0,
+						disabledStar: false
 					}
 				}
+			},
+			starSize: {
+				type: String,
+				default: '1.5em'
+			},
+			maxStar: {
+				type: Number,
+				default: 5
+			},
+			defaultStar: {
+				type: Number,
+				default: 3
+			},
+			disabledStar: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data() {
+			return {
+				curStarNum: 0
 			}
 		},
 		created() {
-			this.getStarArr()
+			this.curStarNum = this.defaultStar;
 		},
-		beforeMount() {
-
-		},
-		mounted() {},
 		methods: {
-			getStarArr: function() {
-				let starArr = [];
-				for (let i = 0, len = this.sunStar.rate; i < len; i++) {
-					starArr.push(this.sunStar.icon);
-				}
-				for (let j = 0; j < 5 - this.sunStar.rate; j++) {
-					starArr.push(this.sunStar.icon + '-o');
-				}
-				this.starArr = starArr;
-			},
-			handleTap: function(e) {
-				if (this.sunStar.disabled) {
+			changeStar(e) {
+				if (this.disabledStar) {
 					return;
 				}
-				this.sunStar.rate = Number(e.currentTarget.dataset.index) + 1;
-				this.$emit('change', {
-					value: Number(e.currentTarget.dataset.index) + 1
+				this.curStarNum = Number(e.currentTarget.dataset.value) + 1;
+				this.$emit("changeStar", {
+					curStar: this.curStarNum
 				});
-				this.getStarArr();
 			}
 		}
 	}
 </script>
-
-<style scoped>
-	.m-t2 {
-		margin-top: 2%;
-		color: #666;
-		font-size: .8em;
-	}
-	.sunui-rate {
-		text-align: center;
-		background-color: #fff;
-		padding: 3%;
+<style>
+	[class*="icon-"] {
+		font-family: "iconfont" !important;
+		font-size: 32upx;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.sun-star .star,
-	.sun-star .star-o {
-		width: 0;
-		height: 0;
-		color: red;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		border-left: 24upx solid transparent;
-		border-right: 24upx solid transparent;
-		/* 如需更改星级颜色,请修改这里! Step1 */
-		border-bottom: 20upx solid #FFBF19;
-		transform: rotate(180deg);
-		margin: 0 10upx;
+	/* https://at.alicdn.com/t */
+	@font-face {
+		font-family: "iconfont";
+		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553663976523');
+		/* IE9 */
+		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553663976523#iefix') format('embedded-opentype'),
+			/* IE6-IE8 */
+			url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAK8AAsAAAAABnQAAAJwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBAIEOATYCJAMICwYABCAFhG0HLhuyBcgOJUGJ2IAhIYRACNGyZfb2a1XUqsB3XaqQKBzCYFGgJMI1oxCyGXHz+pepvfWl0mks7I98nXOpJ2E9d6WWFZo5Uj5x7/SvgAKZDyiXMQatMagLqIsDKdA9MIqsSCJvGLvAJTwm0DQnnctpaXUz8JZZqwLxIPIU8M4FZJml60K15mAWrzzU03M6BryE349/qvAmqRSsqov7Ehbk/3jYWcVT+aTbJwSBgI5XUGAHkImb2sQZN8HYbpoJd0vAvsqDn0pZ+naxV4tgf51V2gYzMBn8VFz5raYT3NZUa4C9UZcSa2PWzcjWVuvqwnJ4c7N53e6IaAmyHRtRlqi2FvfSxa2lyNY221LW/UNNw8V/nO5eo43WaqAo2XzRsCg5j3ZT/nY3Jt73V26InbWyHzy+kVES1fySUwL5AMqr4qvYBS4I3m7+rH1B2T/1Vgbfn8k/oa+8yvq5gPquncEvkvUcyLrCsqWsympHk7VTtzU1UQLsGboZa5zcTybUTUa4amZTFOpWyMzaQUXLPqrqDtC0rex4ywjmJnIDW6YBQt8ekq53FPpOyMy6RsXUC6r64Yamuwi7sGUtRN8ijCiCWEiPQJHR6zjHQXyj8kbED2gonFWEnFaETWIYKmWKYroM6RCeY4tpkFcRwkEO67WwFDyHNBo9NGC9hBgiEwgxZMrlXN2bZIxeC3ydwBAKgbAg2ghIxNDT4fzxhG/p840Q3gANCm7pqwm3QjATcXZISUbRgyzT6nr13csrJoN4KgTBgTiYnhZUCuYhGhp6kKF+ngRhEDLCiJhBJrk9jOurla2v137dCWiyTCns+kJ+JBQGAA==') format('woff2'),
+			url('https://at.alicdn.com/t/iconfont.woff?t=1553663976523') format('woff'),
+			url('https://at.alicdn.com/t/iconfont.ttf?t=1553663976523') format('truetype'),
+			/* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+			url('https://at.alicdn.com/t/iconfont.svg?t=1553663976523#iconfont') format('svg');
+		/* iOS 4.1- */
 	}
 
-	.sun-star .star::after,
-	.sun-star .star::before,
-	.sun-star .star-o::after,
-	.sun-star .star-o::before {
-		content: '';
-		width: 0;
-		height: 0;
-		color: #f00;
-		display: inline-block;
-		border-left: 24upx solid transparent;
-		border-right: 24upx solid transparent;
-		/* 如需更改星级颜色,请修改这里! Step2 */
-		border-bottom: 20upx solid #FFBF19;
-		position: absolute;
-		top:0;
-		left: -24upx;
+	.icon-star {
+		font-size: 1.5em;
 	}
 
-	.sun-star .star::after,
-	.sun-star .star-o::after {
-		content: '';
-		transform: rotate(-68deg);
+	.icon-star:before {
+		content: "\e805";
 	}
 
-	.sun-star .star::before,
-	.sun-star .star-o::before {
-		content: '';
-		transform: rotate(68deg);
+	/* 图标前颜色 */
+	.icon-star-nhover {
+		color: #ddd;
 	}
 
-	.sun-star .star-o {
-		border-bottom: 20upx solid #ccc;
+	/* 图标后颜色 */
+	.icon-star-hover {
+		color: #FFCC00;
 	}
 
-	.sun-star .star-o::after,
-	.sun-star .star-o::before {
-		border-bottom: 20upx solid #ccc;
+	.sunui-m {
+		width: 80%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.sunui-stars {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
 </style>

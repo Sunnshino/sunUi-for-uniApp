@@ -1,65 +1,59 @@
 <template>
-	<view>
+	<!-- 
+		因H5以外的平台不支持硬解码,目前仅能添加几种常用图标颜色
+		采用字体图标,图标和图标颜色自由修改！
+		字体图标来自阿里图库！！
+	 -->
+	<view class="example">
 		<view class="sun-title">星级评价(禁用)</view>
-		<sunui-star @change="starInfo" :sunStar="sunStar"></sunui-star>
-
-		<view class="sun-title">星级评价(禁用-展示评价)</view>
-		<sunui-star @change="starInfo" :sunStar="sunStar1">
-		</sunui-star>
-
+		<sunui-star :defaultStar="3" :disabledStar="true" class="sunui-star" />
 		<view class="sun-title">星级评价(启用)</view>
-		<sunui-star @change="starInfo" :sunStar="sunStar2">
+		<sunui-star :defaultStar="2" :maxStar="5" :starSize='"1.2em"' @changeStar="changeStar" class='sunui-star' />
+		<view class="sun-title">星级评价(更多)</view>
+		<sunui-star :defaultStar="4" :maxStar="8" @changeStar="changeStar" class='sunui-star' />
+		<view class="sun-title">星级评价(slot)</view>
+		<sunui-star :defaultStar="4" :maxStar="6" @changeStar="changeStar" class='sunui-star'>
+			<view class="sunui-small">(这里可以写评价内容...)</view>
 		</sunui-star>
-		
-		<view class="sun-title">星级评价(启用-展示评价)</view>
-		<sunui-star @change="starInfo" :sunStar="sunStar3">
-		</sunui-star>
-
 	</view>
 </template>
-
 <script>
 	export default {
 		data() {
 			return {
-				sunStar: {
-					disabled: true,
-					rate: 1,
-					icon: 'star',
-					tips: false,
-					tipsArr: ['很差', '差', '一般', '好', '非常好']
-				},
-				sunStar1: {
-					disabled: true,
-					rate: 2,
-					icon: 'star',
-					tips: true,
-					tipsArr: ['很差', '差', '一般', '好', '非常好']
-				},
-				sunStar2: {
-					disabled: false,
-					rate: 2,
-					icon: 'star',
-					tips: false,
-					tipsArr: ['很差', '差', '一般', '好', '非常好']
-				},
-				sunStar3: {
-					disabled: false,
-					rate: 2,
-					icon: 'star',
-					tips: true,
-					tipsArr: ['很差', '差', '一般', '好', '非常好']
+				starConfig: {
+					// 默认
+					defaultStar: 3,
+					// 是否禁用
+					disabledStar: true,
+					// 最大星级
+					maxStar: 5,
+					// 图标大小(对应font-size)
+					starSize: '1.5em'
 				}
-			};
+			}
 		},
 		methods: {
-			starInfo(e) {
-				console.log('星级评分:', e)
+			changeStar: function(e) {
+				console.log('curStar:', e.curStar)
 			}
 		}
 	}
 </script>
+<style scoped>
+	/* sunui-star /deep/.icon-star-hover {
+		color: #f00;
+	} */
+	.sunui-small{
+		color: #666;
+		font-size: .7em;
+	}
+	
+	.sunui-star {
+		margin-top: 5%;
+	}
 
-<style>
-
+	.example {
+		padding: 10%;
+	}
 </style>

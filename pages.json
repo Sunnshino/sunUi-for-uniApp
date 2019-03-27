@@ -5,81 +5,72 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		}, {
+			"path": "pages/show/show",
+			"style": {}
+		}, {
+			"path": "pages/tips/tips",
+			"style": {}
+		}, {
+			"path": "pages/about/about",
+			"style": {}
+		}, {
+			"path": "pages/star/star",
+			"style": {}
+		}, {
+			"path": "pages/up-img/up-img",
+			"style": {}
+		}, {
+			"path": "pages/swiper/swiper",
+			"style": {}
+		}, {
+			"path": "pages/radio-checkbox/radio-checkbox",
+			"style": {}
+		}, {
+			"path": "pages/speaker/speaker",
+			"style": {}
+		}, {
+			"path": "pages/basic-request/basic-request",
+			"style": {}
 		}
-	    ,{
-            "path" : "pages/show/show",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/tips/tips",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/about/about",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/star/star",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/up-img/up-img",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/swiper/swiper",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/radio-checkbox/radio-checkbox",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/speaker/speaker",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/basic-request/basic-request",
-            "style" : {}
-        }
-    ],
-	"tabBar" : {
-	    "color" : "#aaa",
-	    "selectedColor" : "#39b54a",
-	    "borderStyle" : "black",
-	    "backgroundColor" : "#ffffff",
-	    "list" : [
-	        {
-	            "pagePath" : "pages/index/index",
-	            "text" : "组件",
-	            "iconPath" : "static/tabbar/component.png",
-	            "selectedIconPath" : "static/tabbar/componentHover.png"
-	        },
-	        {
-	            "pagePath" : "pages/show/show",
-	            "text" : "演示",
-	            "iconPath" : "static/tabbar/show.png",
-	            "selectedIconPath" : "static/tabbar/showHover.png"
-	        },
-	        {
-	            "pagePath" : "pages/tips/tips",
-	            "text" : "提示",
-	            "iconPath" : "static/tabbar/tips.png",
-	            "selectedIconPath" : "static/tabbar/tipsHover.png"
-	        },
-	        {
-	            "pagePath" : "pages/about/about",
-	            "text" : "关于",
-	            "iconPath" : "static/tabbar/about.png",
-	            "selectedIconPath" : "static/tabbar/aboutHover.png"
-	        }
-	    ]
+
+	],
+	"tabBar": {
+		"color": "#aaa",
+		"selectedColor": "#39b54a",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "组件",
+				"iconPath": "static/tabbar/component.png",
+				"selectedIconPath": "static/tabbar/componentHover.png"
+			},
+			{
+				"pagePath": "pages/show/show",
+				"text": "演示",
+				"iconPath": "static/tabbar/show.png",
+				"selectedIconPath": "static/tabbar/showHover.png"
+			},
+			{
+				"pagePath": "pages/tips/tips",
+				"text": "提示",
+				"iconPath": "static/tabbar/tips.png",
+				"selectedIconPath": "static/tabbar/tipsHover.png"
+			},
+			{
+				"pagePath": "pages/about/about",
+				"text": "关于",
+				"iconPath": "static/tabbar/about.png",
+				"selectedIconPath": "static/tabbar/aboutHover.png"
+			}
+		]
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		// #ifndef MP-WEIXIN
-		"navigationStyle":"custom",
+		"navigationStyle": "custom",
 		// #endif
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
