@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<web-view src="https://www.playsort.cn/uniapp-example/up-document.html"></web-view>
+		
 	</view>
 </template>
 
@@ -8,12 +8,8 @@
 	export default {
 		data() {
 			return {
-			};
-		},
-		methods: {
-			click(e) {
 				
-			}
+			};
 		}
 	}
 </script>

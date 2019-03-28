@@ -24,6 +24,22 @@
 					{
 						title:'基础模块类',
 						name:'basic-module'
+					},
+					{
+						title:'渐变背景',
+						name:'gradient-bg'
+					},
+					{
+						title:'背景颜色',
+						name:'bg-color'
+					},
+					{
+						title:'动画animaction',
+						name:'animaction'
+					},
+					{
+						title:'字体阴影(待开发)',
+						name:'font-shadow'
 					}
 				]
 			}

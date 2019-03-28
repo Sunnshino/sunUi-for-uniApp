@@ -10,7 +10,8 @@
 
 ## 版本迭代
 - 2019/3/26 首次发布sunUi for uniApp
-- **2019/3/27 升级star组件**
+- 2019/3/27 升级star组件
+- 2019/3/28 扩展star组件,增加自定义图标love(可扩展)
 
 
 ## 兼容平台(已测,其它平台均未测试)
@@ -22,7 +23,7 @@
 ## 开发小提示
 - Chrome CORS(跨域)或CORB ,打开快捷图标Chrome,然后属性->目标(T)最后加上`--disable-web-security --user-data-dir --allow-running-insecure-content`  
 - console.log(),我们可以在App.vue onLaunch生命周期加上 `console.log=()=>{}` ,指向空(全局就不会打印了，你也可以局部页面添加=>仅局部失效)
----------------------
+- 关于上传`word,excel...`文件(可以采用`web-view`)方式实现,如无法监控上传状态(可以再设置登陆后上传)
 
 ## 基础元素(待UI出图,开发)
 - 布局
@@ -65,5 +66,6 @@
 - 上传图片组件内进行注释修改
 - 上传图片组件已支持阿里云oos
 - 升级star组件
+- 增加star组件扩展图标love
 
 ##### *其它待开发...*

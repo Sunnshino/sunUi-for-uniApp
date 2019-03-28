@@ -1,11 +1,40 @@
 /* global css */
+/* 
+	动画推荐用:animaction.css
+	
+	使用方法:
+	实例：1.animated infinite bounce delay-2s
+	实例：2.animated bounce faster
+	示例：1.animated(必须参数) infinite(是否无限循环) bounce(动画效果) delay-2s(延迟两秒执行)
+	示例：2.animated(必须参数) bounce(动画效果) faster(动画等级)
+	
+	单次执行:
+	animated bounce faster
+	
+	多次间隔执行(infinite=无限循环):
+	animated infinite bounce delay-2s
+	
+	额外(动画等级)参数：
+	slow	2s
+	slower	3s
+	fast	800ms
+	faster	500ms
+	
+	动画延迟时间有:
+	delay-2s
+	delay-3s
+	delay-4s
+	delay-5s
+*/
+
+
 
 page::-webkit-scrollbar {
 	display: none;
 }
 
 page {
-	padding: 10%;
+	/* padding: 10%; */
 	background-color: #222;
 	background-image: radial-gradient(#000 1%, transparent 16%),
 		radial-gradient(#000 1%, transparent 16%),

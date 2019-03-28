@@ -3,8 +3,12 @@
 		因H5以外的平台不支持硬解码,目前仅能添加几种常用图标颜色
 		采用字体图标,图标和图标颜色自由修改！
 		字体图标来自阿里图库！！
+		
+		目前仅支持love,star图标(可扩展,具体见star组件)
 	 -->
 	<view class="example">
+		<view class="sun-title">喜爱评价(启用)</view>
+		<sunui-star :defaultStar="2" :maxStar="5" :starSize='"1.5em"' :type="'love'" @changeStar="changeStar" class='sunui-star' />
 		<view class="sun-title">星级评价(禁用)</view>
 		<sunui-star :defaultStar="3" :disabledStar="true" class="sunui-star" />
 		<view class="sun-title">星级评价(启用)</view>
@@ -41,13 +45,16 @@
 	}
 </script>
 <style scoped>
-	.sunui-small{
+	page{
+		padding: 10%;
+	}
+	
+	.sunui-small {
 		color: #666;
 		font-size: .7em;
 	}
-	
+
 	.sunui-star {
 		margin: 5% 0;
 	}
-
 </style>

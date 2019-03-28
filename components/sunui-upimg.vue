@@ -3,7 +3,7 @@
 		<view class="sunsin_picture_list">
 			<view v-for="(item,index) in upload_picture_list" :key="index" class="sunsin_picture_item">
 				<image v-show="item.upload_percent < 100" :src="item.path" mode="aspectFill"></image>
-				<image v-show="item.upload_percent == 100" :src="item.path" mode="aspectFill" :data-idx="index" @click="previewImgs"></image>
+				<image v-show="item.upload_percent == 100" :src="item.path_server" mode="aspectFill" :data-idx="index" @click="previewImgs"></image>
 				<view class="sunsin_upload_progress" v-show="item.upload_percent < 100" :data-index="index" @click="previewImg">{{item.upload_percent}}%</view>
 				<text class='del' @click='deleteImg' :data-index="index" :style="'color:'+upImgConfig.delIconText+';background-color:'+upImgConfig.delIconColor">×</text>
 			</view>
@@ -30,12 +30,12 @@
 	require('./ali-oos/hmac.js');
 	require('./ali-oos/sha1.js');
 	const Crypto = require('./ali-oos/crypto.js');
-	let upLen = '';
-
+	let upLen = 0;
 	export default {
 		data() {
 			return {
 				imgs: [],
+				upLen:"",
 				upload_picture_list: []
 			};
 		},
@@ -155,7 +155,8 @@
 					upload_picture_list[j]['path_server'] = filename;
 					that.upload_picture_list = upload_picture_list;
 					that.$emit('onUpImg', that.upload_picture_list);
-					upLen = that.upload_picture_list.length;
+					// upLen = that.upload_picture_list.length;
+					// that.upLen = that.upload_picture_list.length;
 					uni.hideLoading();
 				}
 			},
@@ -170,7 +171,8 @@
 			}
 		})
 		upload_task.onProgressUpdate((res) => {
-			for (let i = 0, len = upLen; i < len; i++) {
+			// console.log('upLen:',upLen,that.upLen)
+			for (let i = 0, len = that.upload_picture_list.length; i < len; i++) {
 				upload_picture_list[i]['upload_percent'] = res.progress
 			}
 			that.upload_picture_list = upload_picture_list

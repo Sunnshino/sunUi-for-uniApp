@@ -2,8 +2,11 @@
 	<view class="sunui-stars">
 		<view class="sunui-m">
 			<view class="sunui-stars-items" v-for="(item, index) in maxStar" :key="index" @tap="changeStar" :data-value="index">
-				<view>
+				<view v-show="type=='star'">
 					<text class="iconfont icon-star" :class="[curStarNum > index ?'icon-star-hover':'icon-star-nhover']" :style="'font-size:'+starSize+';'"></text>
+				</view>
+				<view v-show="type=='love'">
+					<text class="iconfont icon-aixin" :class="[curStarNum > index ?'icon-love-hover':'icon-love-nhover']" :style="'font-size:'+starSize+';'"></text>
 				</view>
 			</view>
 		</view>
@@ -24,6 +27,10 @@
 					}
 				}
 			},
+			type: {
+				type: String,
+				default: 'star'
+			},
 			starSize: {
 				type: String,
 				default: '1.5em'
@@ -43,7 +50,8 @@
 		},
 		data() {
 			return {
-				curStarNum: 0
+				curStarNum: 0,
+				icon: 'icon-aixin'
 			}
 		},
 		created() {
@@ -63,6 +71,15 @@
 	}
 </script>
 <style>
+	
+	/* 
+		如要进行图标扩展，请看以下说明
+		
+		1. 去阿里图库把喜欢的图标加入购物车，然后下载代码，解压以后把iconfont.css复制进来
+		2. 把所有图标链接加上：https://at.alicdn.com/t/ (不加会引入错误)
+		3. 可以看代码行5~10扩展,基本上改个名称，改个type类型，最后再写个经过前经过后样式即可
+	 */
+	
 	[class*="icon-"] {
 		font-family: "iconfont" !important;
 		font-size: 32upx;
@@ -74,32 +91,54 @@
 	/* https://at.alicdn.com/t */
 	@font-face {
 		font-family: "iconfont";
-		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553663976523');
+		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553739503978');
 		/* IE9 */
-		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553663976523#iefix') format('embedded-opentype'),
+		src: url('https://at.alicdn.com/t/iconfont.eot?t=1553739503978#iefix') format('embedded-opentype'),
 			/* IE6-IE8 */
-			url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAK8AAsAAAAABnQAAAJwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBAIEOATYCJAMICwYABCAFhG0HLhuyBcgOJUGJ2IAhIYRACNGyZfb2a1XUqsB3XaqQKBzCYFGgJMI1oxCyGXHz+pepvfWl0mks7I98nXOpJ2E9d6WWFZo5Uj5x7/SvgAKZDyiXMQatMagLqIsDKdA9MIqsSCJvGLvAJTwm0DQnnctpaXUz8JZZqwLxIPIU8M4FZJml60K15mAWrzzU03M6BryE349/qvAmqRSsqov7Ehbk/3jYWcVT+aTbJwSBgI5XUGAHkImb2sQZN8HYbpoJd0vAvsqDn0pZ+naxV4tgf51V2gYzMBn8VFz5raYT3NZUa4C9UZcSa2PWzcjWVuvqwnJ4c7N53e6IaAmyHRtRlqi2FvfSxa2lyNY221LW/UNNw8V/nO5eo43WaqAo2XzRsCg5j3ZT/nY3Jt73V26InbWyHzy+kVES1fySUwL5AMqr4qvYBS4I3m7+rH1B2T/1Vgbfn8k/oa+8yvq5gPquncEvkvUcyLrCsqWsympHk7VTtzU1UQLsGboZa5zcTybUTUa4amZTFOpWyMzaQUXLPqrqDtC0rex4ywjmJnIDW6YBQt8ekq53FPpOyMy6RsXUC6r64Yamuwi7sGUtRN8ijCiCWEiPQJHR6zjHQXyj8kbED2gonFWEnFaETWIYKmWKYroM6RCeY4tpkFcRwkEO67WwFDyHNBo9NGC9hBgiEwgxZMrlXN2bZIxeC3ydwBAKgbAg2ghIxNDT4fzxhG/p840Q3gANCm7pqwm3QjATcXZISUbRgyzT6nr13csrJoN4KgTBgTiYnhZUCuYhGhp6kKF+ngRhEDLCiJhBJrk9jOurla2v137dCWiyTCns+kJ+JBQGAA==') format('woff2'),
-			url('https://at.alicdn.com/t/iconfont.woff?t=1553663976523') format('woff'),
-			url('https://at.alicdn.com/t/iconfont.ttf?t=1553663976523') format('truetype'),
+			url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMcAAsAAAAABvQAAALQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBXIFdATYCJAMMCwgABCAFhG0HNhsjBsgOJSGJwIDhIYFkBNWy9ezup0hSoEJ2+FweFaJE4RAGiwKhUSYKh0KorNE36V99DnKOxCIPnmwOxHdLlVBtd6RP3Dttis9nRbnMNfBTF2AcUKBjDYqsQBL0hrELXuBxAm1zIujtF1U0AFOFPS4Q1yytAqaFsKKwXFOoNywt4oGRZrpLNwH30ffjT1yYktQye+rBVaEW5HwmvjfKt9WEjoBEspwTbBUZ64BCXDa6jxkk6XUG2rrS0GgF6oqQlopVFZHYUNadPzySIOrs6i5YRsbkoSQel8S3kfSpsxmejpdtwAV9cusQi+7Du487NzXtPrx00LGhYefo3n1OjWHhvmMuu1yaG/Hs5RMHnJua9xwYfrzU4Liz5OwcXffwWeOjR6mHloMvPml+8iL93YfK2nv//aV3gugtCkiQTr9Xu8ztv3A69F/ksanvZw+9Jk7BobO2k8ciK4KG6fs5kPx4trjgcknBxVeBry6WJAI5raTM0n9qq6JqvflacnjytVCQCvKC8mmgB0D1IL/mDQCqL/kt/f/n35h5X3/abZPxx7RTwMeN6m9RqHpQDK/QlGCSvyoZ2FYMmW3JRRN7YsubLQ5wJqCQ+1TA9o+9nq6fuvN8aJqa4G+YfQtv03xGLvR11HRsoq5pC21rild3TMAMRGlh1SxAGDqDpO8J2dAtcqG/Qs20L6gbhgHaDsNhy47FYM3zMVIRpIXqQchqZIlybcQ8rq1DdK+gwnlZxGhCWMfGYGxUTDlXjCSEl5ih66PjCKEghWURFoHTkCDIUMEyhzQkiiFESYuOppreFKWRRWBuD4aoEIgWpDYIYmnIJFTQnTCvfL4OQuslUMEdhDp/EwTTYfuHYkWJGUAuVkuDCI/yik4fWhyCoEAUTCaCisAgRCCQQUrzIA6iQURhJiQVaaKdTtRQddT2WvH/9kCbvV+OFDmKckNU2EjFDrASAA==') format('woff2'),
+			url('https://at.alicdn.com/t/iconfont.woff?t=1553739503978') format('woff'),
+			url('https://at.alicdn.com/t/iconfont.ttf?t=1553739503978') format('truetype'),
 			/* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-			url('https://at.alicdn.com/t/iconfont.svg?t=1553663976523#iconfont') format('svg');
+			url('https://at.alicdn.com/t/iconfont.svg?t=1553739503978#iconfont') format('svg');
 		/* iOS 4.1- */
 	}
 
-	.icon-star {
-		font-size: 1.5em;
+	.iconfont {
+		font-family: "iconfont" !important;
+		font-size: 16px;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.icon-star:before {
 		content: "\e805";
 	}
 
-	/* 图标前颜色 */
+	.icon-aixin:before {
+		content: "\e635";
+	}
+
+	.icon-star {
+		font-size: 1.5em;
+	}
+
+	/* 爱心图标经过颜色 */
+	.icon-love-nhover {
+		color: #ddd;
+	}
+
+	/* 爱心图标经过后颜色 */
+	.icon-love-hover {
+		color: #F00;
+	}
+
+	/* star图标前颜色 */
 	.icon-star-nhover {
 		color: #ddd;
 	}
 
-	/* 图标后颜色 */
+	/* star图标后颜色 */
 	.icon-star-hover {
 		color: #FFCC00;
 	}
