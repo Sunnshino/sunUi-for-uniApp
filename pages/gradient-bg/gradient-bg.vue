@@ -43,7 +43,7 @@
 	}
 
 	.box {
-		width: 48%;
+		width: 49%;
 		height: 200upx;
 		margin-bottom: 7%;
 		box-shadow: 0 1px 8px #666;

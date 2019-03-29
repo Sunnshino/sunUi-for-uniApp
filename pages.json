@@ -9,8 +9,8 @@
 		{
 			"path": "pages/test/test",
 			"style": {}
-		}
-		, {
+		},
+		{
 			"path": "pages/show/show",
 			"style": {}
 		}, {
@@ -40,29 +40,27 @@
 		},
 		{
 			"path": "pages/basic-module/basic-module",
-			"style":{}
+			"style": {}
+		}, {
+			"path": "pages/basic-module/line/line",
+			"style": {}
+		}, {
+			"path": "pages/gradient-bg/gradient-bg",
+			"style": {}
+		}, {
+			"path": "pages/bg-color/bg-color",
+			"style": {}
+		}, {
+			"path": "pages/animaction/animaction",
+			"style": {}
+		}, {
+			"path": "pages/font-shadow/font-shadow",
+			"style": {}
+		}, {
+			"path": "pages/moveing-bg/moveing-bg",
+			"style": {}
 		}
-        ,{
-            "path" : "pages/basic-module/line/line",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/gradient-bg/gradient-bg",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/bg-color/bg-color",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/animaction/animaction",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/font-shadow/font-shadow",
-            "style" : {}
-        }
-    ],
+	],
 	"tabBar": {
 		"color": "#aaa",
 		"selectedColor": "#39b54a",

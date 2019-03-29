@@ -34,11 +34,15 @@
 						name:'bg-color'
 					},
 					{
+						title:'动态背景',
+						name:'moveing-bg'
+					},
+					{
 						title:'动画animaction',
 						name:'animaction'
 					},
 					{
-						title:'字体阴影(待开发)',
+						title:'边框阴影',
 						name:'font-shadow'
 					}
 				]

@@ -1,6 +1,5 @@
 <template name="sunui-swiper">
 	<view>
-
 		<swiper class="card-swiper" indicator-dots="true" circular="true" autoplay="true"
 		 interval="5000" duration="500" @change="cardChange" indicator-color="#8799a3" indicator-active-color="#0081ff" previous-margin="100upx" next-margin="100upx" display-multiple-items="1" v-if="swiperConfig.type=='card'">
 			<swiper-item v-for="(item,index) in swiperConfig.data" :key='index' :class="cardCur==index?'cur':''">

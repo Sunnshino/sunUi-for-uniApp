@@ -53,7 +53,7 @@
 	}
 
 	.box {
-		width: 48%;
+		width: 49%;
 		height: 200upx;
 		color: #fff;
 		font-weight: bold;

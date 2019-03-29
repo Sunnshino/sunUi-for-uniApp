@@ -34,7 +34,6 @@ page::-webkit-scrollbar {
 }
 
 page {
-	/* padding: 10%; */
 	background-color: #222;
 	background-image: radial-gradient(#000 1%, transparent 16%),
 		radial-gradient(#000 1%, transparent 16%),
