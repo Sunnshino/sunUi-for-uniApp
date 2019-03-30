@@ -24,13 +24,14 @@
 		justify-content: center;
 		align-items: center;
 		margin-top: 10%;
+		width: 100%;
 	}
 
 	.desc {
 		/* 更改字体颜色 */
 		color: #ddd;
 		text-align: center;
-		padding: 2%;
+		margin: 0 2%;
 		font-size: .8em;
 	}
 

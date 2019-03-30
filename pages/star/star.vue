@@ -49,6 +49,10 @@
 		padding: 10%;
 	}
 	
+	.sun-title{
+		width: 90%;
+	}
+	
 	.sunui-small {
 		color: #666;
 		font-size: .7em;

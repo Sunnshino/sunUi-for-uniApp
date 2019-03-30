@@ -34,9 +34,9 @@ page::-webkit-scrollbar {
 }
 
 page {
-	background-color: #222;
-	background-image: radial-gradient(#000 1%, transparent 16%),
-		radial-gradient(#000 1%, transparent 16%),
+	background-color: #999;
+	background-image: radial-gradient(#666 1%, transparent 16%),
+		radial-gradient(#666 1%, transparent 16%),
 		radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%),
 		radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%);
 	background-position: 0 0px,
@@ -46,19 +46,55 @@ page {
 	background-size: 16px 16px;
 }
 
+
+[class*="icon-"] {
+	font-family: "iconfont" !important;
+	font-size: inherit;
+	font-style: normal;
+}
+
+
+/* 隐藏掉滚动条方式1 */
+::-webkit-scrollbar {
+	display: none !important;
+}
+
+/* 隐藏掉滚动条方式2 */
+/* ::-webkit-scrollbar {
+	width: 0 !important;
+	height: 0 !important;
+	color: transparent !important;
+} */
+
+
+text[class*="icon-"] {
+	font-size: 1.5em;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav-icon {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
 .nav-li {
 	color: #fff;
-	width: 80%;
+	width: 40%;
 	height: 150upx;
-	margin-top: 3%;
-	padding: 6% 4%;
-	margin: 6%;
+	margin: 2%;
+	padding: 3%;
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 10upx;
 	border-bottom: 1upx solid #ddd;
-	background-image: url('https://www.playsort.cn/static/imgs/bg.jpg');
-	background-size: cover;
+	background-color: transparent;
+	background-size: 80%;
+	background-repeat: no-repeat;
 	box-shadow: 1upx 2upx 8upx #000;
 }
 
@@ -68,6 +104,7 @@ page {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+	text-shadow: 0.1em 0.1em 0.05em #333;
 }
 
 .nav-name {
@@ -85,12 +122,14 @@ page {
 	justify-content: center;
 	align-items: center;
 	margin-top: 10%;
+	width: 100%;
 }
 
 .desc {
 	color: #ddd;
 	text-align: center;
-	padding: 2%;
+	/* padding: 2%; */
+	margin: 0 2%;
 	font-size: .8em;
 }
 
@@ -105,6 +144,7 @@ page {
  私缀样式(sun) 
  */
 .sun-title {
+	width: 100%;
 	color: #000;
 	font-size: .8em;
 	font-weight: 100;
@@ -116,6 +156,13 @@ page {
 .nav-hover {
 	opacity: .8;
 }
+
+
+/* 
+	文字颜色(CT)
+ */
+
+
 
 /* 
 	背景颜色(BG)

@@ -22,19 +22,24 @@
 				upImgConfig: {
 					// 是否阿里云oos且oos地址必须是https
 					oos: true,
-					// 阿里云oos上传key_secret(后端传)
-					AccessKeySecret: 'zmOJcaqKJB5e4gqtLunHcNoMBTdDgp',
-					// 阿里云oos上传key_id(后端传)
-					OSSAccessKeyId: 'LTAIPcJL9J5OZr2G',
-					// 阿里云oos上传目录(必须存在)
-					oosDirectory: 'mifanimg',
-
+					aliConfig:{
+						// 阿里云oos上传key_secret(后端传)
+						AccessKeySecret: 'zmOJcaqKJB5e4gqtLunHcNoMBTdDgp',
+						// 阿里云oos上传key_id(后端传)
+						OSSAccessKeyId: 'LTAIPcJL9J5OZr2G',
+						// 阿里云oos上传目录(必须存在)
+						oosDirectory: 'mifanimg',
+					},
 					// 后端图片接口地址(阿里云开启oos的话就填写阿里云上传服务器url：http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/否则的话写自己后端上传图片地址，注意把oos置为false!!!)
 					url: 'http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/',
-					// 是否开启notli(即选择完直接上传)
+					// 是否开启notli(开启的话就是选择完直接上传，关闭的话当count满足数量时才上传)
 					notli: false,
 					// 图片数量
 					count: 2,
+					// 相机来源([相机,相册],[相机])
+					sourceType: true,
+					// 是否压缩上传照片(仅小程序生效)
+					sizeType: true,
 					// 新增上传背景修改
 					bgColor: '#0089FC',
 					// 新增上传icon图标颜色修改
@@ -53,7 +58,7 @@
 		},
 		methods: {
 			// 上传图片(2019/3/29新增) -> 手动上传(需要传入上传url,还需要搭配count参数使用!)
-			uImageTap(e) {
+			uImageTap() {
 				this.$refs.uImage.uploadimage('http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/');
 			},
 			//获取上传图片返回来的数组(Step1)
