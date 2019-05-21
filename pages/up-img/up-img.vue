@@ -24,14 +24,14 @@
 					oos: true,
 					aliConfig:{
 						// 阿里云oos上传key_secret(后端传)
-						AccessKeySecret: 'zmOJcaqKJB5e4gqtLunHcNoMBTdDgp',
+						AccessKeySecret: 'xxxx',
 						// 阿里云oos上传key_id(后端传)
-						OSSAccessKeyId: 'LTAIPcJL9J5OZr2G',
+						OSSAccessKeyId: 'xxxx',
 						// 阿里云oos上传目录(必须存在)
-						oosDirectory: 'mifanimg',
+						oosDirectory: 'xxxx',
 					},
 					// 后端图片接口地址(阿里云开启oos的话就填写阿里云上传服务器url：http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/否则的话写自己后端上传图片地址，注意把oos置为false!!!)
-					url: 'http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/',
+					url: 'xxxx',
 					// 是否开启notli(开启的话就是选择完直接上传，关闭的话当count满足数量时才上传)
 					notli: false,
 					// 图片数量
