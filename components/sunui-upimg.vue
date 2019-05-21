@@ -49,14 +49,14 @@
 						oos: true,
 						aliConfig:{
 							// 阿里云oos上传key_secret(后端传)
-							AccessKeySecret: 'zmOJcaqKJB5e4gqtLunHcNoMBTdDgp',
+							AccessKeySecret: 'xxxx',
 							// 阿里云oos上传key_id(后端传)
-							OSSAccessKeyId: 'LTAIPcJL9J5OZr2G',
+							OSSAccessKeyId: 'xxx',
 							// 阿里云oos上传目录(必须存在)
-							oosDirectory: 'mifanimg',
+							oosDirectory: 'xxxx',
 						},
 						// 后端图片接口地址
-						url: 'https://j.dns06.net.cn/index.php?m=Api&c=index&a=uploadDownwind',
+						url: 'xxx',
 						// 是否开启notli(即选择完直接上传)
 						notli: false,
 						// 图片数量
